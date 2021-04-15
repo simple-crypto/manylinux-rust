@@ -13,7 +13,7 @@ jobs:
           fail-fast: false
           matrix:
               include:
-                  - manulinux_base: manylinux2014
+                  - manylinux_base: manylinux2014
                     rust_version: 1.51.0
                     platform: x86_64
       steps:
