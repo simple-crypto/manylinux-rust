@@ -1,6 +1,9 @@
 ARG MANYLINUX_BASE=manylinux2014
 ARG RUST_VERSION=1.51.0
 ARG PLATFORM=x86_64
+RUN echo manylinux: $MANYLINUX_BASE
+RUN echo rust: $RUST_VERSION
+RUN echo platform: $PLATFORM
 FROM quay.io/pypa/${MANYLINUX_BASE}_${PLATFORM}
 WORKDIR /root
 RUN cd /root \
