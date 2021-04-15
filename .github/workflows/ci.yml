@@ -42,12 +42,8 @@ jobs:
                 tags: |
                     ghcr.io/simple-crypto/${{ matrix.manylinux_base }}_${{ matrix.platform }}:rust-${{ matrix.rust_version}}
                 build-args: |
-                    MANYLINUX_BASE
-                    RUST_VERSION
-                    PLATFORM
-            env:
-                MANYLINUX_BASE: ${{ matrix.manylinux_base }}
-                RUST_VERSION: ${{ matrix.rust_version }}
-                PLATFORM: ${{ matrix.platform }}
+                    MANYLINUX_BASE=${{ matrix.manylinux_base }}
+                    RUST_VERSION=${{ matrix.rust_version }}
+                    PLATFORM=${{ matrix.platform }}
           - name: Image digest
             run: echo ${{ steps.docker_build.outputs.digest }}
